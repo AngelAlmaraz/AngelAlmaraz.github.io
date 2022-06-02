@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>GLC a AP</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+          type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+          rel="stylesheet" type="text/css"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet"/>
+</head>
+<body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">Mario&Angel.com</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">¿Qué son?</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Ejemplos</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Actividad</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/tec.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>GLCs y APs</h1>
+                            <span class="subheading">¿Qué son? aquí te lo explicamos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-8 col-lg-8 col-xl-8">
+                        <h2 class="section-heading">Gramáticas Libres de Contexto (GLC's) </h2>
+                        <p>Consiste de una colección de reglas de sustitución llamadas producciones, cada regla aparece como una línea en la gramática y comprende un símbolo y una cadena separada por una flecha, el símbolo se llama variable (representada por letras mayúsculas), la cadena consiste de variables y símbolos llamados terminales (minúsculas, símbolos especiales como diagonales, parentesis, etc). Es importante recordar que siempre hay una variable inicial.</p>
+                        <h2 class="section-heading">Definición Formal </h2>
+
+                            <p>V = Conjunto finito de Variables</p>
+                            <p>Σ = Conjunto finito de Terminales</p>
+                            <p>R = Conjunto finito de reglas</p>
+                            <p>S =  Variable inicial</p>
+
+                        <h2 class="section-heading">Autómatas de Pila (AP's) </h2>
+                        <p>Son como los autómatas finitos indeterministas, pero tienen un componente extra que es la pila. La pila provee un espacio de almacenamiento y permite que el autómata reconozca algunos lenguajes que no son regulares. Es importante recordar que la pila tiene la propiedad de que solo se puede sacar el elemento de hasta arriba por lo que el último en entrar es el primero en salir.
+                        </p>
+                        <h2 class="section-heading">Definición Formal </h2>
+
+                        <p>Q = Es el conjunto finito llamado Estados</p>
+                        <p>Σ = Es el conjunto finito llamado Alfabeto</p>
+                        <p>𝛤 = Es el conjunto finito llamado Alfabeto de la pila</p>
+                        <p>q0 = Estado inicial</p>
+                        <p>δ = Función de transición, donde Q x Σε x 𝛤ε -> P(Q x 𝛤ε)</p>
+                        <p>F = Conjunto de estados de aceptación</p>
+
+                        <h2 class="section-heading">Conversión de una GLC a un AP
+                        </h2>
+                        <p>Un Lenguaje es libre de contexto solo si un autómata de pila lo reconoce. Sea A un LLC, por definición sabemos que A tiene una GLC “G” que lo genera. Mostraremos como convertir G en un AP “P”.
+                        </p>
+                        <p>Sea P (Q,Σ,𝛤q0,δ,F) el AP que queremos construir.</p>
+
+                        <p>Caso 1: Iniciamos la pila para que tenga el símbolo de $ y S, donde S = q0</p>
+                        <ul>
+                            <li>
+                                <p>Los estados de P son: qa,qi,qc donde qi es nuestro estado inicial, qa es el estado de aceptación, y qc es nuestro estado de ciclo. </p>
+                            </li>
+                            <li>
+                                <p>La función de transición se define como:
+                                    Caso 1: Iniciamos la pila para que contenga los símbolos $ y S, donde S es nuestra variable inicial.
+                                    δ(q1,ε,ε) = {(qciclo, S$)}
+                                </p>
+                            </li>
+                        </ul>
+                        <img src="assets/img/case1.PNG" alt="Case1">
+
+                    </div>
+                </div>
+            </div>
+            <br><br><br>
+
+        </main>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="https://github.com/AngelAlmaraz">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Mario&Angel.com 2022 | Ahora si lo hicimos bien</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
